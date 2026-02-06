@@ -4,32 +4,25 @@ import java.util.Scanner;
 
 public class UserInput {
 
-    public String firstName;
-    public String lastName;
-    public double budget;
-    public String couponCode;
-
-    public void promptUserName() {
+    public String promptUserName(boolean isFirstName) {
         System.out.println("Welcome to the Budget Calculator!");
-        System.out.println("What is your first name?");
+        System.out.println((isFirstName) ? "What is your first name?" : "What is your last name?");
         Scanner scan = new Scanner(System.in);
 
-        firstName = scan.next();
-        System.out.println("What is your last name?");
-        lastName = scan.next();
+        return scan.next();
     }
 
-    public void promptUserBudget() {
+    public double promptUserBudget() {
         System.out.println("Okay.., what's your budget lookin' like today?:");
         Scanner scan = new Scanner(System.in);
 
-        budget = scan.nextDouble();
+        return scan.nextDouble();
     }
 
-    public void promptCouponCode() {
+    public String promptCouponCode() {
         System.out.println("Alrighty.. put in your coupon code:");
         Scanner scan = new Scanner(System.in);
-        couponCode = scan.next();
+        return scan.next();
     }
 
 }
